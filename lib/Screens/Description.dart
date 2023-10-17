@@ -8,7 +8,9 @@ import '../widgets/feature.dart';
 class DescriptionScreen extends StatefulWidget {
   const DescriptionScreen({Key? key, required this.data, required this.index})
       : super(key: key);
+  // ignore: prefer_typing_uninitialized_variables
   final data;
+  // ignore: prefer_typing_uninitialized_variables
   final index;
 
   @override
@@ -137,7 +139,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
             const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               'Description',
               style: TextStyle(
                 fontSize: 18,
@@ -149,7 +151,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
             const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
               style: TextStyle(
                 color: Colors.black54,
@@ -161,7 +163,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
             const SizedBox(
               height: 20,
             ),
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
               child: Card(
                 shape: RoundedRectangleBorder(
@@ -190,7 +192,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
+                              children: const [
                                 Text(
                                   "Owais Nasar",
                                   style: TextStyle(
@@ -217,18 +219,11 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width / 2,
                             height: MediaQuery.of(context).size.height / 23,
                             child: ElevatedButton(
                               onPressed: () {},
-                              child: Text(
-                                'Get Schedule',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -237,9 +232,16 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 35, vertical: 10),
                               ),
+                              child: const Text(
+                                'Get Schedule',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width / 3,
                             height: MediaQuery.of(context).size.height / 23,
                             child: ElevatedButton(
@@ -254,7 +256,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                               ),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
+                                children: const [
                                   Icon(
                                     Icons.call,
                                     size: 20,

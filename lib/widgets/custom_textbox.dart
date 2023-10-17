@@ -22,7 +22,7 @@ class CustomTextBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.only(bottom: 3),
+      padding: const EdgeInsets.only(bottom: 3),
       height: 50,
       decoration: BoxDecoration(
         color: AppColor.textBoxColor,
@@ -33,7 +33,7 @@ class CustomTextBox extends StatelessWidget {
             color: AppColor.shadowColor.withOpacity(.05),
             spreadRadius: .5,
             blurRadius: .5,
-            offset: Offset(0, 1), // changes position of shadow
+            offset: const Offset(0, 1), // changes position of shadow
           ),
         ],
       ),
@@ -45,7 +45,7 @@ class CustomTextBox extends StatelessWidget {
           suffixIcon: suffix,
           border: InputBorder.none,
           hintText: hint,
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
             color: Colors.grey,
             fontSize: 18,
           ),

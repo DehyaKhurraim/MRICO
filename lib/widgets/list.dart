@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/Screens/Description.dart';
-import 'package:untitled1/widgets/data.dart';
 
 import '../ThemeConfig/Colors.dart';
 import 'custom_image.dart';
-import 'icon_box.dart';
 
 class ListDisplay extends StatefulWidget {
   const ListDisplay({Key? key, required this.data, required this.index})
       : super(key: key);
+  // ignore: prefer_typing_uninitialized_variables
   final data;
+  // ignore: prefer_typing_uninitialized_variables
   final index;
 
   @override
@@ -20,7 +20,6 @@ class _ListDisplayState extends State<ListDisplay> {
   @override
   Widget build(BuildContext context) {
     double imgHeight = MediaQuery.of(context).size.width / 4;
-    double imgWidth = MediaQuery.of(context).size.width / 3;
 
     return Stack(
       children: [
@@ -66,9 +65,7 @@ class _ListDisplayState extends State<ListDisplay> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      print(widget.index);
-                    },
+                    onTap: () {},
                     child: CustomImage(
                       widget.data["image"],
                       radius: 20,
@@ -81,9 +78,7 @@ class _ListDisplayState extends State<ListDisplay> {
             : Row(
                 children: [
                   GestureDetector(
-                    onTap: () {
-                      print(widget.index);
-                    },
+                    onTap: () {},
                     child: CustomImage(
                       widget.data["image"],
                       radius: 20,

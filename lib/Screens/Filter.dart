@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:untitled1/Screens/HomeScreen.dart';
 import '../ThemeConfig/Colors.dart';
 import '../widgets/Routing.dart';
 import '../widgets/category_item.dart';
@@ -76,7 +75,7 @@ class _FilterScreenState extends State<FilterScreen> {
             floating: true,
             title: _buildHeader(),
             leading: IconButton(
-              icon: Icon(
+              icon: const Icon(
                 FontAwesomeIcons.backward,
                 color: kfroColor,
               ),
@@ -84,7 +83,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 Navigator.push(
                   context,
                   SlidePageRoute(
-                    page: RootApp(),
+                    page: const RootApp(),
                   ),
                 );
               },
@@ -176,7 +175,7 @@ class _FilterScreenState extends State<FilterScreen> {
               children: [
                 IconButton(
                   onPressed: _clearFilters,
-                  icon: Icon(Icons.clear),
+                  icon: const Icon(Icons.clear),
                 ),
               ],
             ),
@@ -276,44 +275,6 @@ class _FilterScreenState extends State<FilterScreen> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildSearch() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Row(
-        children: [
-          const Expanded(
-            child: Material(
-              child: CustomTextBox(
-                hint: "Search",
-                prefix: Icon(Icons.search, color: Colors.grey),
-              ),
-            ),
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: AppColor.secondary,
-            ),
-            child: IconButton(
-              onPressed: () {
-                setState(() {
-                  display = !display;
-                });
-              },
-              icon: const Icon(
-                Icons.filter_list_rounded,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }

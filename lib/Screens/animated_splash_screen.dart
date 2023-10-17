@@ -1,6 +1,7 @@
 library animated_splash_screen;
 
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:page_transition/page_transition.dart';
 
 enum SplashType { simpleSplash, backgroundScreenReturn }
@@ -71,19 +72,19 @@ class AnimatedSplashScreen extends StatefulWidget {
 
   factory AnimatedSplashScreen(
       {Curve curve = Curves.easeInCirc,
-        Future Function()? function,
-        int duration = 2500,
-        required dynamic splash,
-        required Widget nextScreen,
-        Color backgroundColor = Colors.white,
-        Animatable? customTween,
-        bool centered = true,
-        bool disableNavigation = false,
-        SplashTransition? splashTransition,
-        PageTransitionType? pageTransitionType,
-        Duration? animationDuration,
-        double? splashIconSize,
-        String? nextRoute}) {
+      Future Function()? function,
+      int duration = 2500,
+      required dynamic splash,
+      required Widget nextScreen,
+      Color backgroundColor = Colors.white,
+      Animatable? customTween,
+      bool centered = true,
+      bool disableNavigation = false,
+      SplashTransition? splashTransition,
+      PageTransitionType? pageTransitionType,
+      Duration? animationDuration,
+      double? splashIconSize,
+      String? nextRoute}) {
     return AnimatedSplashScreen._internal(
       backgroundColor: backgroundColor,
       animationDuration: animationDuration,
@@ -169,24 +170,25 @@ class AnimatedSplashScreen extends StatefulWidget {
     );
   }
 
-  AnimatedSplashScreen._internal(
+  const AnimatedSplashScreen._internal(
       {required this.animationDuration,
-        required this.splashTransition,
-        required this.customAnimation,
-        required this.backgroundColor,
-        required this.transitionType,
-        required this.splashIconSize,
-        required this.nextScreen,
-        required this.function,
-        required this.duration,
-        required this.centered,
-        required this.disableNavigation,
-        required this.splash,
-        required this.curve,
-        required this.type,
-        required this.nextRoute});
+      required this.splashTransition,
+      required this.customAnimation,
+      required this.backgroundColor,
+      required this.transitionType,
+      required this.splashIconSize,
+      required this.nextScreen,
+      required this.function,
+      required this.duration,
+      required this.centered,
+      required this.disableNavigation,
+      required this.splash,
+      required this.curve,
+      required this.type,
+      required this.nextRoute});
 
   @override
+  // ignore: library_private_types_in_public_api
   _AnimatedSplashScreenState createState() => _AnimatedSplashScreenState();
 }
 
@@ -202,23 +204,23 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
   void initState() {
     super.initState();
 
-    _animationController = new AnimationController(
-        duration: w.animationDuration ?? Duration(milliseconds: 800),
+    _animationController = AnimationController(
+        duration: w.animationDuration ?? const Duration(milliseconds: 800),
         vsync: this);
 
     Animatable animation = w.customAnimation ??
-            () {
+        () {
           switch (w.splashTransition) {
             case SplashTransition.slideTransition:
               return Tween<Offset>(
                 end: Offset.zero,
-                begin: Offset(1, 0),
+                begin: const Offset(1, 0),
               );
 
             case SplashTransition.decoratedBoxTransition:
               return DecorationTween(
-                  end: BoxDecoration(color: Colors.black87),
-                  begin: BoxDecoration(color: Colors.redAccent));
+                  end: const BoxDecoration(color: Colors.black87),
+                  begin: const BoxDecoration(color: Colors.redAccent));
 
             default:
               return Tween(begin: 0.0, end: 1.0);
@@ -232,9 +234,11 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
 
   /// call function case needed and then jump to next screen
   doTransition() async {
-    if (w.type == SplashType.backgroundScreenReturn)
+    if (w.type == SplashType.backgroundScreenReturn) {
       navigator(await w.function!());
-    else if (!w.disableNavigation) navigator(w.nextRoute ?? w.nextScreen);
+    } else if (!w.disableNavigation) {
+      navigator(w.nextRoute ?? w.nextScreen);
+    }
   }
 
   @override
@@ -278,18 +282,18 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
                 height: size,
                 child: w.splash is String
                     ? <Widget>() {
-                  if (w.splash.toString().contains('[n]'))
-                    return Image.network(
-                        w.splash.toString().replaceAll('[n]', ''));
-                  else
-                    return Image.asset(w.splash);
-                }()
+                        if (w.splash.toString().contains('[n]')) {
+                          return Image.network(
+                              w.splash.toString().replaceAll('[n]', ''));
+                        } else {
+                          return Image.asset(w.splash);
+                        }
+                      }()
                     : (w.splash is IconData
-                    ? Icon(w.splash, size: size)
-                    : w.splash))));
+                        ? Icon(w.splash, size: size)
+                        : w.splash))));
   }
 
-  /// return transtion
   Widget getTransition({required Widget child}) {
     switch (w.splashTransition) {
       case SplashTransition.slideTransition:

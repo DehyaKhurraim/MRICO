@@ -10,6 +10,7 @@ class CategoryItem extends StatelessWidget {
     this.onTap,
   }) : super(key: key);
 
+  // ignore: prefer_typing_uninitialized_variables
   final data;
   final bool selected;
   final GestureTapCallback? onTap;
@@ -21,8 +22,8 @@ class CategoryItem extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 500),
         curve: Curves.fastOutSlowIn,
-        padding: EdgeInsets.fromLTRB(5, 20, 5, 0),
-        margin: EdgeInsets.only(right: 10),
+        padding: const EdgeInsets.fromLTRB(5, 20, 5, 0),
+        margin: const EdgeInsets.only(right: 10),
         width: 80,
         height: 80,
         decoration: BoxDecoration(
@@ -33,7 +34,7 @@ class CategoryItem extends StatelessWidget {
               color: AppColor.shadowColor.withOpacity(0.1),
               spreadRadius: .5,
               blurRadius: .5,
-              offset: Offset(0, 1), // changes position of shadow
+              offset: const Offset(0, 1), // changes position of shadow
             ),
           ],
         ),

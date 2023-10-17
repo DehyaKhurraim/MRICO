@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:untitled1/Screens/PropertiesSeeAllScreen.dart';
 import '../ThemeConfig/Colors.dart';
-import '../widgets/bottombar_items.dart';
-import '../widgets/category_item.dart';
 import '../widgets/custom_image.dart';
-import '../widgets/custom_textbox.dart';
 import '../widgets/data.dart';
-import '../widgets/icon_box.dart';
-import '../widgets/list.dart';
 import 'HomeScreen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -19,34 +13,6 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  int _activeTab = 4;
-  final List _barItems = [
-    {
-      "icon": Icons.home_outlined,
-      "active_icon": Icons.home_rounded,
-      "page": const HomePage(),
-    },
-    {
-      "icon": Icons.search_outlined,
-      "active_icon": Icons.search,
-      "page": const HomeScreen(),
-    },
-    {
-      "icon": Icons.favorite_border,
-      "active_icon": Icons.favorite_outlined,
-      "page": const PropertiesSeeAllScreen(),
-    },
-    {
-      "icon": Icons.forum_outlined,
-      "active_icon": Icons.forum_rounded,
-      "page": const HomePage(),
-    },
-    {
-      "icon": Icons.settings_outlined,
-      "active_icon": Icons.settings_rounded,
-      "page": const ProfileScreen(),
-    },
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -35,12 +35,6 @@ class _DetailWidgetState extends State<DetailWidget> {
   ];
   String selectedPropertyType = "Homes";
 
-  void _onItemTapped(int index) {
-    setState(() {
-      navindex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

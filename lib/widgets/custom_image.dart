@@ -5,6 +5,7 @@ import '../ThemeConfig/Colors.dart';
 class CustomImage extends StatelessWidget {
   const CustomImage(
     this.name, {
+    super.key,
     this.width = 100,
     this.height = 100,
     this.bgColor,
@@ -38,7 +39,7 @@ class CustomImage extends StatelessWidget {
             color: AppColor.shadowColor.withOpacity(0.1),
             spreadRadius: 1,
             blurRadius: 1,
-            offset: Offset(0, 1), // changes position of shadow
+            offset: const Offset(0, 1), // changes position of shadow
           ),
         ],
         image: DecorationImage(

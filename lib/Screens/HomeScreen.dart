@@ -1,12 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:untitled1/Screens/BottomNavbar.dart';
-
 import '../ThemeConfig/Colors.dart';
 import '../widgets/category_item.dart';
 import '../widgets/custom_image.dart';
-import '../widgets/custom_textbox.dart';
 import '../widgets/data.dart';
 import '../widgets/property_item.dart';
 import '../widgets/recent_item.dart';
@@ -28,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         alignment: Alignment.bottomCenter,
         children: [
           Column(
-            children: [
+            children: const [
               customAppBar(),
             ],
           ),
@@ -38,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
+// ignore: camel_case_types
 class customAppBar extends StatelessWidget {
   const customAppBar({Key? key}) : super(key: key);
 
@@ -50,7 +47,7 @@ class customAppBar extends StatelessWidget {
         right: appPadding,
         top: appPadding * 2,
       ),
-      child: Container(
+      child: SizedBox(
         height: size.height * 0.22,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,11 +64,11 @@ class customAppBar extends StatelessWidget {
                       borderRadius: BorderRadius.circular(0)),
                   child: Image.asset("assets/Logo.png"),
                 ),
-                Container(
+                SizedBox(
                   height: 50,
                   width: 50,
                   child: RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                           style: TextStyle(
                               color: Colors.black), //apply style to all
                           children: [
@@ -94,6 +91,7 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomePageState createState() => _HomePageState();
 }
 
@@ -124,7 +122,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text(
                   "Hello!",
                   style: TextStyle(
@@ -174,11 +172,11 @@ class _HomePageState extends State<HomePage> {
             height: 20,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Properties",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
@@ -192,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                                 const PropertiesSeeAllScreen()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       "See all",
                       style: TextStyle(fontSize: 14, color: AppColor.darker),
                     ),
@@ -209,10 +207,10 @@ class _HomePageState extends State<HomePage> {
             height: 20,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text(
                   "Recommended",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
@@ -232,11 +230,11 @@ class _HomePageState extends State<HomePage> {
             height: 20,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Recent",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
@@ -248,7 +246,7 @@ class _HomePageState extends State<HomePage> {
                         MaterialPageRoute(builder: (context) => const RootApp()),
                       );*/
                     },
-                    child: Text(
+                    child: const Text(
                       "See all",
                       style: TextStyle(fontSize: 14, color: AppColor.darker),
                     ),
@@ -311,7 +309,7 @@ class _HomePageState extends State<HomePage> {
     );
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.only(bottom: 5, left: 15),
+      padding: const EdgeInsets.only(bottom: 5, left: 15),
       child: Row(children: lists),
     );
   }
@@ -343,7 +341,7 @@ class _HomePageState extends State<HomePage> {
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.only(bottom: 5, left: 15),
+      padding: const EdgeInsets.only(bottom: 5, left: 15),
       child: Row(children: lists),
     );
   }
@@ -358,7 +356,7 @@ class _HomePageState extends State<HomePage> {
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.only(bottom: 5, left: 15),
+      padding: const EdgeInsets.only(bottom: 5, left: 15),
       child: Row(children: lists),
     );
   }

@@ -31,7 +31,7 @@ class _PropertiesSeeAllScreenState extends State<PropertiesSeeAllScreen> {
             floating: true,
             title: _buildHeader(),
             leading: IconButton(
-              icon: Icon(
+              icon: const Icon(
                 FontAwesomeIcons.backward,
                 color: kfroColor,
               ),
@@ -75,7 +75,7 @@ class _PropertiesSeeAllScreenState extends State<PropertiesSeeAllScreen> {
                     Navigator.push(
                       context,
                       SlidePageRoute(
-                        page: FilterScreen(),
+                        page: const FilterScreen(),
                       ),
                     );
                   }

@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 const Color kPrimaryColor = Color(0xFF0B493E);
@@ -6,6 +7,7 @@ const Color ktriColor = Color(0xFFC97B2C);
 const Color kfroColor = Color(0xB3C97B2C);
 const Color black = Colors.black;
 const double appPadding = 30.0;
+
 class AppColor {
   static const primary = Color(0xFF3498db);
   static const secondary = Color(0xFF2ecc71);

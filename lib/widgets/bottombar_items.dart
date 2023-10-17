@@ -1,17 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../ThemeConfig/Colors.dart';
 
 class BottomBarItem extends StatelessWidget {
   const BottomBarItem(
-      this.icon, {
-        this.onTap,
-        this.color = AppColor.inActiveColor,
-        this.activeColor = AppColor.primary,
-        this.isActive = false,
-        this.isNotified = false,
-      });
+    this.icon, {
+    super.key,
+    this.onTap,
+    this.color = AppColor.inActiveColor,
+    this.activeColor = AppColor.primary,
+    this.isActive = false,
+    this.isNotified = false,
+  });
 
   final IconData icon;
   final Color color;
@@ -30,7 +30,7 @@ class BottomBarItem extends StatelessWidget {
           alignment: Alignment.center,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(7),
+              padding: const EdgeInsets.all(7),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: isActive
